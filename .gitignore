@@ -1,0 +1,36 @@
+# Obsidian runtime state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/graph.json
+
+# Private local configuration
+.obsidian/llm.json
+
+# Community plugin installs and generated plugin state
+.obsidian/plugins/*
+!.obsidian/plugins/obsidian-zotero-desktop-connector/
+.obsidian/plugins/obsidian-zotero-desktop-connector/*
+!.obsidian/plugins/obsidian-zotero-desktop-connector/data.json
+!.obsidian/plugins/templater-obsidian/
+.obsidian/plugins/templater-obsidian/*
+!.obsidian/plugins/templater-obsidian/data.json
+
+# Zotero Integration generated annotation assets
+images/
+Papers/**/images/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+~$*
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

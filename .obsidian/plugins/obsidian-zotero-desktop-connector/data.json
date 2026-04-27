@@ -1,0 +1,20 @@
+{
+  "database": "Zotero",
+  "noteImportFolder": "",
+  "pdfExportImageDPI": 120,
+  "pdfExportImageFormat": "jpg",
+  "pdfExportImageQuality": 90,
+  "citeFormats": [],
+  "exportFormats": [
+    {
+      "name": "Create Literature Note",
+      "outputPathTemplate": "Papers/{{title}}.md",
+      "imageOutputPathTemplate": "images",
+      "imageBaseNameTemplate": "annotation",
+      "templatePath": "Templates/Paper - Zotero Import.md"
+    }
+  ],
+  "citeSuggestTemplate": "[[{{title}}]]",
+  "openNoteAfterImport": true,
+  "whichNotesToOpenAfterImport": "first-imported-note"
+}
