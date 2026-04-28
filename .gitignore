@@ -9,6 +9,9 @@
 
 # Community plugin installs and generated plugin state
 .obsidian/plugins/*
+!.obsidian/plugins/dataview/
+.obsidian/plugins/dataview/*
+!.obsidian/plugins/dataview/data.json
 !.obsidian/plugins/obsidian-zotero-desktop-connector/
 .obsidian/plugins/obsidian-zotero-desktop-connector/*
 !.obsidian/plugins/obsidian-zotero-desktop-connector/data.json

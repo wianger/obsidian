@@ -1,5 +1,7 @@
 [
   "obsidian-excalidraw-plugin",
   "obsidian-zotero-desktop-connector",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-git",
+  "dataview"
 ]

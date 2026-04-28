@@ -357,6 +357,11 @@ async function main() {
   let markdown = await fs.readFile(notePath, "utf8");
   const meta = parseFrontmatter(markdown);
 
+  if (!meta.type) {
+    markdown = setFrontmatterValue(markdown, "type", "paper");
+    meta.type = "paper";
+  }
+
   if (!meta.created) {
     const created = formatReadableTimestamp();
     markdown = setFrontmatterValue(markdown, "created", created);
