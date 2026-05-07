@@ -1,14 +1,32 @@
 ---
 type: paper
-authors: ["Yongtong Wu", "Shaoyuan Chen", "Yinmin Zhong", "Rilin Huang", "Yixuan Tan", "Wentao Zhang", "Liyue Zhang", "Shangyan Zhou", "Yuxuan Liu", "Shunfeng Zhou", "Mingxing Zhang", "Xin Jin", "Panpan Huang"]
-publish: "2026-02-26"
-venue: "arXiv"
-url: "http://arxiv.org/abs/2602.21548"
-zotero: "zotero://open-pdf/library/items/M8C4Z6MJ"
-created: "2026-05-06 20:32"
-abstract: |-
-  多轮代理LLM推理的性能越来越受到KV-Cache存储I/O而非计算的限制。在流行的分离式架构中，从外部存储加载大量KV-Cache造成了根本性的不平衡：预填充引擎上的存储NIC带宽饱和，而解码引擎上的NIC却处于空闲状态。这种不对称性严重限制了整体系统吞吐量。我们提出DualPath，一种通过引入双路径KV-Cache加载来打破这一瓶颈的推理系统。除了传统的存储到预填充路径外，DualPath实现了新型的存储到解码路径，其中KV-Cache被加载到解码引擎，然后通过计算网络上的RDMA高效传输到预填充引擎。DualPath将这种优化的数据路径——它本质上避免了网络拥塞并避免干扰对延迟敏感的模型执行通信——与一个全局调度器相结合，该调度器动态平衡预填充和解码引擎之间的负载。我们在三个模型上使用生产代理工作负载的评估表明，DualPath在我们内部推理系统上将离线推理吞吐量提升了高达1.87$\times$。它还能在不违反SLO的前提下将在线服务吞吐量平均提升1.96$\times$。
-tags: ["kv-cache", "llm-inference", "agentic-workloads", "dual-path", "rdma", "disaggregated-architecture", "throughput-optimization"]
+authors:
+  - Yongtong Wu
+  - Shaoyuan Chen
+  - Yinmin Zhong
+  - Rilin Huang
+  - Yixuan Tan
+  - Wentao Zhang
+  - Liyue Zhang
+  - Shangyan Zhou
+  - Yuxuan Liu
+  - Shunfeng Zhou
+  - Mingxing Zhang
+  - Xin Jin
+  - Panpan Huang
+publish: 2026-02-26
+venue: arXiv
+url: http://arxiv.org/abs/2602.21548
+zotero: zotero://open-pdf/library/items/M8C4Z6MJ
+created: 2026-05-06 20:32
+abstract: 多轮代理LLM推理的性能越来越受到KV-Cache存储I/O而非计算的限制。在流行的分离式架构中，从外部存储加载大量KV-Cache造成了根本性的不平衡：预填充引擎上的存储NIC带宽饱和，而解码引擎上的NIC却处于空闲状态。这种不对称性严重限制了整体系统吞吐量。我们提出DualPath，一种通过引入双路径KV-Cache加载来打破这一瓶颈的推理系统。除了传统的存储到预填充路径外，DualPath实现了新型的存储到解码路径，其中KV-Cache被加载到解码引擎，然后通过计算网络上的RDMA高效传输到预填充引擎。DualPath将这种优化的数据路径——它本质上避免了网络拥塞并避免干扰对延迟敏感的模型执行通信——与一个全局调度器相结合，该调度器动态平衡预填充和解码引擎之间的负载。我们在三个模型上使用生产代理工作负载的评估表明，DualPath在我们内部推理系统上将离线推理吞吐量提升了高达1.87$\times$。它还能在不违反SLO的前提下将在线服务吞吐量平均提升1.96$\times$。
+tags:
+  - kv-cache
+  - llm
+  - agent
+  - rdma
+  - disaggregated-architecture
+  - throughput
 ---
 这篇论文《**DualPath: Breaking the Storage Bandwidth Bottleneck in Agentic LLM Inference**》由北京大学、清华大学与 DeepSeek-AI 联合发表，针对当前大模型 **Agent（智能体）多轮推理场景** 中的核心系统瓶颈提出了全新的架构设计与调度机制。以下从问题背景、核心创新、关键技术、实验验证及总结展望五个维度进行详细解读：
 
